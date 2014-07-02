@@ -1,6 +1,7 @@
 # CashRegisterField
 
-TODO: Write a gem description
+Lets you use a digits-only field to enter dollars and cents.
+Javascript adds the decimal and any zero-padding necessary.
 
 ## Installation
 
@@ -16,9 +17,20 @@ Or install it yourself as:
 
     $ gem install cash_register_field
 
+If using an asset pipeline, add the following to your application.js AFTER jquery:
+
+`//= require cash_register_field`
+
 ## Usage
 
-TODO: Write usage instructions here
+In your view, add a number field with class 'cash_register'.  Example:
+
+    = number_field_tag 'product_price',
+      nil,
+      class: 'cash_register',
+      pattern: '\d*'  # this tells a mobile device to use a digits-only keyboard
+
+Pretty simple.
 
 ## Contributing
 
